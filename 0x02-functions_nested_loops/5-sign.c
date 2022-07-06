@@ -6,8 +6,7 @@
  */
 int print_sign(int n)
 {
-	int numz;
-	
+	int numz;	
 	if (n > 0)
 	{
 		numz = 1;
