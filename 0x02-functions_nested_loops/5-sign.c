@@ -5,7 +5,7 @@
  * Return:0 or 1
  */
 int print_sign(int n)
-{	
+{
 	int numz;
 
 	if (n > 0)
