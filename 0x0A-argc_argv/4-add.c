@@ -3,30 +3,36 @@
 
 /**
  * main - adds positive numbers.
- * @argc: number of argument passed
- * @argv: arrays of pointers to the arguments
- * Return: 0 if successful, otherwise return 1
+ * @argc: argument count
+ * @argv: arguments
+ *
+ * Return: 0
  */
-
 int main(int argc, char **argv)
 {
-	int i, add;
+	int i, n, sum = 0;
+	char *flag;
 
-	if (argc == 1)
-		printf("0\n");
-	else
+	if (argc < 2)
 	{
-		add = 0;
-		for (i = 1; i < argc; i++)
-		{
-			if (**(argv + i) < '0' || **(argv + i) > '9')
-			{
-				printf("Error\n");
-				return (1);
-			}
-			add += atoi(*(argv + i));
-		}
-		printf("%d\n", add);
+		printf("0\n");
+		return (0);
 	}
+
+	for (i = 1; argv[i]; i++)
+	{
+		n = strtol(argv[i], &flag, 10);
+		if (*flag)
+		{
+			printf("Error\n");
+			return (1);
+		}
+		else
+		{
+			sum += n;
+		}
+	}
+	printf("%d\n", sum);
+
 	return (0);
 }
