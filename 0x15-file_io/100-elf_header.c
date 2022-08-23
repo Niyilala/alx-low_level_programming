@@ -172,8 +172,7 @@ void check_sys(char *ptr)
 		printf("  Class:                             ELF32\n");
 
 	if (sys == '2')
-
-	printf("  Class:                             ELF64\n");
+		printf("  Class:                             ELF64\n");
 
 	print_data(ptr);
 	print_version(ptr);
@@ -242,6 +241,6 @@ int main(int argc, char *argv[])
 
 	check_sys(ptr);
 	close(fd);
-		
+
 	return (0);
 }
